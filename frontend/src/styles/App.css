@@ -1,0 +1,169 @@
+/* Reset default margin/padding for consistency across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Body Style */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 20px;
+}
+
+/* Header */
+.App-header h1 {
+  color: #4CAF50;
+  font-size: 36px;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* URL input form */
+.url-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideIn 1s ease-in-out;
+}
+
+.url-input input {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  font-size: 18px;
+  margin: 10px 0;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+}
+
+.url-input button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.url-input button:hover {
+  background-color: #45a049;
+}
+
+/* Quiz Container */
+.quiz-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.quiz-container h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+.quiz-container p {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Options container */
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Button styles for options */
+.options button {
+  padding: 12px;
+  width: 100%;
+  max-width: 300px;
+  margin: 8px auto;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Option hover effect */
+.options button:hover {
+  background-color: #45a049;
+}
+
+/* Correct answer style */
+.correct {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Incorrect answer style */
+.incorrect {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 600px) {
+  .quiz-container {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+  
+  .options button {
+    width: 80%;
+  }
+}
+
+@media (min-width: 900px) {
+  .quiz-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+  }
+  
+  .options button {
+    width: 70%;
+  }
+}

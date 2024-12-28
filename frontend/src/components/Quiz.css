@@ -1,0 +1,1022 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(120deg, #84fab0, #8fd3f4);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Quiz Container */
+.quiz-container {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Question Number */
+.quiz-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* Question Text */
+.quiz-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Options Styling */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background: #ccc;
+  color: #888;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Correct Answer */
+button.correct {
+  background-color: #4caf50;
+  color: white;
+  animation: correctGlow 0.5s ease-in-out;
+}
+
+@keyframes correctGlow {
+  0% {
+    box-shadow: 0 0 5px #4caf50;
+  }
+  100% {
+    box-shadow: 0 0 20px #4caf50;
+  }
+}
+
+/* Incorrect Answer */
+button.incorrect {
+  background-color: #f44336;
+  color: white;
+  animation: incorrectShake 0.5s ease-in-out;
+}
+
+/* Shake animation for incorrect answers */
+@keyframes incorrectShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+/* Score Card */
+.score-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.score-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.score-card p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.score-card button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: #28a745;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.score-card button:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-bottom: 2px solid #0056b3;
+}
+
+.navbar h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.navbar p {
+  font-size: 1rem;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quiz-container, .score-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
+
+  .navbar h2 {
+    font-size: 1.2rem;
+  }
+
+  .navbar p {
+    font-size: 0.9rem;
+  }
+}
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #007bff;
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+  border-bottom: 3px solid #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Title Styling */
+.navbar h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: textGlow 1.5s infinite alternate;
+}
+
+/* Subtitle Styling */
+.navbar p {
+  font-size: 1.2rem;
+  margin: 5px 0 0;
+  font-style: italic;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* Text Glow Animation */
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px #84fab0, 0 0 30px #8fd3f4;
+  }
+  to {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 15px #84fab0, 0 0 20px #8fd3f4;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar h2 {
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+  }
+
+  .navbar p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .navbar p {
+    font-size: 0.9rem;
+  }
+}
+.score-table {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.score-table table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+.score-table th, .score-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.score-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.score-table td {
+  text-align: center;
+}
+
+.score-table button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.score-table button:hover {
+  background-color: #0056b3;
+}
+/* Styling for the quiz and result components */
+.quiz-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.options button {
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.filters label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.filters input {
+  padding: 5px;
+  width: 100%;
+  max-width: 250px;
+  margin-top: 5px;
+}
+
+.score-table {
+  margin-top: 20px;
+}
+
+.score-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.score-table th,
+.score-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.score-table th {
+  background-color: #f4f4f4;
+}
+
+.actions button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 15px;
+  }
+
+  .filters,
+  .score-table {
+    padding: 0;
+  }
+
+  .filters label,
+  .filters input {
+    width: 100%;
+  }
+
+  .score-table table {
+    font-size: 14px;
+  }
+
+  .score-table th,
+  .score-table td {
+    padding: 8px;
+  }
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container for the entire quiz */
+.quiz-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Question text styling */
+.quiz-container p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Styling for the options */
+.options button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  margin: 10px auto;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.options button:hover {
+  background-color: #2980b9;
+}
+
+/* Styling for correct and incorrect answers */
+.options button.correct {
+  background-color: #2ecc71; /* Green for correct answer */
+}
+
+.options button.incorrect {
+  background-color: #e74c3c; /* Red for incorrect answer */
+}
+
+/* Score Table Styling */
+.score-table {
+  margin-top: 30px;
+}
+
+.score-table h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.filters label {
+  font-size: 14px;
+  font-weight: 600;
+  flex-basis: 100%;
+}
+
+.filters input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.filters input[type="date"],
+.filters input[type="number"] {
+  width: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+}
+
+table td {
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.actions button {
+  padding: 12px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.actions button:hover {
+  background-color: #2980b9;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .quiz-container p {
+    font-size: 16px;
+  }
+
+  .options button {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .filters input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .filters label {
+    flex-basis: 100%;
+    font-size: 13px;
+  }
+
+  table th,
+  table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .actions button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .quiz-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .filters label {
+    font-size: 12px;
+  }
+
+  .filters input {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  table th,
+  table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .actions button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: black; /* Set text color to black */
+  line-height: 1.6;
+}
+
+/* Container for the entire quiz */
+.quiz-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: black; /* Set text color to black */
+}
+
+/* Question text styling */
+.quiz-container p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: black; /* Set text color to black */
+}
+
+/* Styling for the options */
+.options button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  margin: 10px auto;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.options button:hover {
+  background-color: #2980b9;
+}
+
+.options button.correct {
+  background-color: #2ecc71; /* Green for correct answer */
+}
+
+.options button.incorrect {
+  background-color: #e74c3c; /* Red for incorrect answer */
+}
+
+/* Score Table Styling */
+.score-table {
+  margin-top: 30px;
+}
+
+.score-table h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: black; /* Set text color to black */
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.filters label {
+  font-size: 14px;
+  font-weight: 600;
+  flex-basis: 100%;
+  color: black; /* Set text color to black */
+}
+
+.filters input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.filters input[type="date"],
+.filters input[type="number"] {
+  width: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+  color: black; /* Set text color to black */
+}
+
+table th {
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+}
+
+table td {
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.actions button {
+  padding: 12px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.actions button:hover {
+  background-color: #2980b9;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-bottom: 2px solid #0056b3;
+}
+
+.navbar h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: black; /* Set text color to black */
+}
+
+.navbar p {
+  font-size: 1rem;
+  margin: 0;
+  font-style: italic;
+  color: black; /* Set text color to black */
+}
+
+/* Main Title Styling */
+.navbar h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: textGlow 1.5s infinite alternate;
+}
+
+/* Subtitle Styling */
+.navbar p {
+  font-size: 1.2rem;
+  margin: 5px 0 0;
+  font-style: italic;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* Text Glow Animation */
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px #84fab0, 0 0 30px #8fd3f4;
+  }
+  to {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 15px #84fab0, 0 0 20px #8fd3f4;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 15px;
+  }
+
+  .navbar h2 {
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+  }
+
+  .navbar p {
+    font-size: 1rem;
+  }
+
+  .filters input {
+    width: 100%;
+  }
+
+  table th,
+  table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .actions button {
+    font-size: 14px;
+    padding: 1+0px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .navbar p {
+    font-size: 0.9rem;
+  }
+
+  .quiz-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .filters label {
+    font-size: 12px;
+  }
+
+  .filters input {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  table th,
+  table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .actions button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+/* Quiz Container */
+.quiz-container {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Question Number */
+.quiz-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: black; /* Set text color to black */
+}
+
+/* Question Text */
+.quiz-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: black; /* Set text color to black */
+}
+
+/* Options Styling */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background: #ccc;
+  color: #888;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Correct Answer */
+button.correct {
+  background-color: #4caf50;
+  color: white;
+  animation: correctGlow 0.5s ease-in-out;
+}
+
+@keyframes correctGlow {
+  0% {
+    box-shadow: 0 0 5px #4caf50;
+  }
+  100% {
+    box-shadow: 0 0 20px #4caf50;
+  }
+}
+
+/* Incorrect Answer */
+button.incorrect {
+  background-color: #f44336;
+  color: white;
+  animation: incorrectShake 0.5s ease-in-out;
+}
+
+/* Shake animation for incorrect answers */
+@keyframes incorrectShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+/* Score Card */
+.score-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.score-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: black; /* Set text color to black */
+}
+
+.score-card p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: black; /* Set text color to black */
+}
+
+.score-card button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: #28a745;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.score-card button:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
